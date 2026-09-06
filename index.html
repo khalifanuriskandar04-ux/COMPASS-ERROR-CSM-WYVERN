@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#061d31">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Compass Error CSM WYVERN">
+<title>Compass Error — CSM WYVERN</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:#020d17;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+body{min-height:100vh}
+.app{min-height:100vh;background:
+linear-gradient(180deg,rgba(2,18,34,.28),rgba(1,11,20,.78)),
+url("dashboard-bg.png") center top/cover fixed no-repeat;
+}
+.overlay{min-height:100vh;background:linear-gradient(180deg,rgba(0,24,45,.04) 0%,rgba(0,12,24,.20) 34%,rgba(0,9,18,.92) 100%);padding:14px}
+.wrap{max-width:980px;margin:auto}
+.top{height:54px;display:flex;justify-content:space-between;align-items:center}
+.iconbtn{width:42px;height:42px;border:1px solid #ffffff55;border-radius:11px;background:#021d34bb;color:#fff;font-size:22px;backdrop-filter:blur(8px)}
+.brand{text-align:center;text-shadow:0 3px 12px #000}
+.brand h1{font-size:31px;margin:2px 0;font-weight:950;letter-spacing:.5px}
+.brand h2{font-size:20px;margin:0;font-weight:850}
+.brand p{font-size:9px;letter-spacing:1.2px;margin:5px 0;color:#e5f5ff}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:20px;background:#031525d9;border:1px solid #2a5a78;border-radius:14px;padding:3px;backdrop-filter:blur(10px)}
+.tab{border:0;background:transparent;color:#d4e1e8;border-radius:10px;padding:10px 3px;font-weight:800;font-size:10px}.tab span{display:block;font-size:19px;margin-bottom:2px}.tab.active{background:#087fe5;color:#fff}
+.card{margin-top:12px;background:linear-gradient(145deg,#041b2dE8,#02111fe8);border:1px solid #276080;border-radius:15px;padding:13px;box-shadow:0 10px 30px #0008;backdrop-filter:blur(9px)}
+.title{font-size:14px;font-weight:950;letter-spacing:.4px;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.field{background:#041a2ae8;border:1px solid #28526b;border-radius:10px;padding:10px}
+label{display:block;font-size:9px;color:#b6cbd6;font-weight:800;letter-spacing:.7px;margin-bottom:6px}
+input,select{width:100%;height:43px;border-radius:8px;border:1px solid #496b7f;background:#eef3f6;color:#102c3d;font-size:18px;font-weight:800;padding:6px 9px}
+.row{display:grid;grid-template-columns:1fr 72px;gap:6px}
+.buttons{display:flex;gap:8px;margin-top:10px}.btn{flex:1;border:0;border-radius:9px;padding:12px;color:white;font-weight:900;background:#087fe5}.btn.alt{background:#28475c}.btn.green{background:#098449}.btn.red{background:#9e3039}
+.result{display:grid;gap:7px}.res{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#041a2ae8;border:1px solid #315c74;border-radius:10px}.res small{font-size:10px;color:#c7d5dc}.res strong{font-size:23px}.gold{color:#ffd12f}.green{color:#48df82}.cyan{color:#25baff}
+.steps{margin-top:9px;padding:11px;border-radius:9px;background:#031522;border:1px solid #234a61;font-size:11px;line-height:1.65;color:#d7e4ea}
+.ok{margin-top:8px;padding:11px;text-align:center;background:#07572f;border:1px solid #2cd77b66;border-radius:9px;font-size:12px;font-weight:900}
+.panel{display:none}.panel.active{display:block}
+.object{display:flex;align-items:center;gap:9px;width:100%;border:1px solid #28536b;background:#041a2ae8;color:white;border-radius:9px;padding:9px;margin:6px 0;text-align:left}.object .oicon{width:40px;height:40px;border-radius:7px;background:#17516d;display:grid;place-items:center;font-size:20px}.object .oname{flex:1}.object b{display:block;font-size:11px}.object small{color:#9fb4c1}.object strong{color:#4fc9ff;font-size:11px}
+.note{font-size:10px;color:#b4c5ce;line-height:1.65}.formula{font-family:ui-monospace,monospace;font-size:11px;line-height:1.8;background:#031522;border-left:3px solid #159ee4;padding:10px;border-radius:6px}
+.footer{text-align:center;font-size:9px;letter-spacing:1px;color:#9db3c0;padding:18px 0 10px}
+@media(max-width:600px){.app{background-position:center top;background-size:auto 100vh;background-attachment:scroll}.grid{grid-template-columns:1fr}.brand h1{font-size:25px}.brand h2{font-size:18px}.tabs{margin-top:12px}.tab{font-size:9px}}
+</style>
+</head>
+<body>
+<div class="app"><div class="overlay"><div class="wrap">
+
+<div class="top">
+<button class="iconbtn" onclick="alert('COMPASS ERROR CSM WYVERN')">☰</button>
+<div class="brand"><h1>COMPASS ERROR</h1><h2>CSM WYVERN</h2><p>SAFE NAVIGATION • ACCURATE COURSE • EVERY MILE COUNTS</p></div>
+<button class="iconbtn" onclick="alert('CSM WYVERN Navigation Calculator')">⚙</button>
+</div>
+
+<nav class="tabs">
+<button class="tab active" data-p="calc"><span>▣</span>Calculator</button>
+<button class="tab" data-p="position"><span>⌖</span>Position</button>
+<button class="tab" data-p="objects"><span>⚓</span>Objects</button>
+<button class="tab" data-p="theory"><span>▤</span>Theory</button>
+<button class="tab" data-p="settings"><span>⚙</span>Settings</button>
+</nav>
+
+<section id="calc" class="panel active">
+<div class="card"><div class="title">⚓ INPUT DATA</div>
+<div class="grid">
+<div class="field"><label>COMPASS BEARING (C)</label><input id="c" type="number" inputmode="decimal" placeholder="090"></div>
+<div class="field"><label>DEVIATION</label><div class="row"><input id="d" type="number" inputmode="decimal" placeholder="2.0"><select id="de"><option>E</option><option>W</option></select></div></div>
+<div class="field"><label>VARIATION</label><div class="row"><input id="v" type="number" inputmode="decimal" placeholder="1.0"><select id="ve"><option>E</option><option>W</option></select></div></div>
+</div>
+<div class="buttons"><button class="btn" onclick="calc()">🧮 Calculate</button><button class="btn alt" onclick="resetAll()">↻ Reset</button></div></div>
+
+<div class="card"><div class="title">🎯 RESULT</div><div class="result">
+<div class="res"><small>Compass Error<br>(Deviation + Variation)</small><strong id="ce" class="gold">0.0° E</strong></div>
+<div class="res"><small>Magnetic Bearing (M)<br>(C + Deviation)</small><strong id="mb" class="green">000.0° M</strong></div>
+<div class="res"><small>True Bearing (T)<br>(M + Variation)</small><strong id="tb" class="cyan">000.0° T</strong></div>
+</div><div id="steps" class="steps">Enter the compass bearing, deviation and variation.</div><div id="ok" class="ok">✓ READY FOR CALCULATION</div></div>
+</section>
+
+<section id="position" class="panel">
+<div class="card"><div class="title">🌐 POSITION • LAT / LONG & DISTANCE</div>
+<div class="grid">
+<div class="field"><label>OWN SHIP LATITUDE</label><input id="lat1" placeholder="01°13.449' N"></div>
+<div class="field"><label>OWN SHIP LONGITUDE</label><input id="lon1" placeholder="103°04.299' E"></div>
+<div class="field"><label>WAYPOINT / OBJECT LATITUDE</label><input id="lat2" placeholder="01°20.000' N"></div>
+<div class="field"><label>WAYPOINT / OBJECT LONGITUDE</label><input id="lon2" placeholder="103°10.000' E"></div>
+</div><div class="buttons"><button class="btn" onclick="distance()">📍 Calculate Distance</button><button class="btn alt" onclick="posExample()">↻ Example</button></div></div>
+<div class="card"><div class="title">🧭 ROUTE RESULT</div><div class="result">
+<div class="res"><small>Distance</small><strong id="dist" class="gold">0.00 NM</strong></div>
+<div class="res"><small>Initial True Bearing</small><strong id="ib" class="cyan">000.0° T</strong></div>
+<div class="res"><small>Final Bearing</small><strong id="fb" class="green">000.0° T</strong></div>
+</div><div id="psteps" class="steps">Coordinates support degrees/minutes or decimal degrees.</div></div>
+</section>
+
+<section id="objects" class="panel">
+<div class="card"><div class="title">📍 COMMON OBJECTS</div><input id="search" oninput="objects()" placeholder="Search object..." style="margin-bottom:8px">
+<div id="olist"></div>
+<button class="btn" style="margin-top:9px" onclick="addCustomObject()">＋ Add Custom Object</button>
+</div>
+<div class="card"><div class="title">OBJECT OBSERVATION</div><div class="grid">
+<div class="field"><label>TRUE BEARING</label><input id="ot" type="number" inputmode="decimal" placeholder="104.8"></div>
+<div class="field"><label>COMPASS BEARING</label><input id="oc" type="number" inputmode="decimal" placeholder="103.8"></div>
+</div><button class="btn" style="margin-top:9px" onclick="objError()">Calculate Object Error</button><div id="or" class="steps">True Bearing − Compass Bearing = Compass Error.</div></div>
+</section>
+
+<section id="theory" class="panel">
+<div class="card"><div class="title">🧭 COMPASS ERROR FORMULA</div><div class="formula">Compass Error = Deviation + Variation
+Magnetic Bearing (M) = Compass (C) + Deviation
+True Bearing (T) = Magnetic (M) + Variation
+True Bearing (T) = Compass (C) + Compass Error
+
+East = positive (+)
+West = negative (−)</div></div>
+<div class="card"><div class="title">⚠ NAVIGATION NOTE</div><p class="note">Use the vessel's approved deviation card and current charted magnetic variation. This application is a calculation aid and does not replace approved navigation procedures, charts, ECDIS or the vessel SMS.</p></div>
+</section>
+
+<section id="settings" class="panel">
+<div class="card"><div class="title">⚙ SETTINGS</div>
+<p class="note">Application: <b>Compass Error CSM WYVERN</b></p>
+<p class="note">Units: <b>Degrees / Nautical Miles</b></p>
+<p class="note">Bearing: <b>000°–360°</b></p>
+<p class="note">Sign convention: <b>E + / W −</b></p>
+</div></section>
+
+<div class="footer">CSM WYVERN • SAFE NAVIGATION • ACCURATE COURSE • EVERY MILE COUNTS</div>
+</div></div></div>
+
+<script>
+const norm=x=>((x%360)+360)%360;
+const fmt=x=>norm(x).toFixed(1).padStart(5,'0');
+const signed=(x,e)=>Number(x||0)*(e==='E'?1:-1);
+function calc(){
+ const C=Number(c.value||0),D=signed(d.value,de.value),V=signed(v.value,ve.value),E=D+V,M=norm(C+D),T=norm(C+E);
+ ce.textContent=Math.abs(E).toFixed(1)+'° '+(E>=0?'E':'W');mb.textContent=fmt(M)+'° M';tb.textContent=fmt(T)+'° T';
+ steps.innerHTML=`1. Compass Error = ${D>=0?D.toFixed(1)+'° E':Math.abs(D).toFixed(1)+'° W'} + ${V>=0?V.toFixed(1)+'° E':Math.abs(V).toFixed(1)+'° W'} = <b>${Math.abs(E).toFixed(1)}° ${E>=0?'E':'W'}</b><br>2. Magnetic = <b>${fmt(M)}° M</b><br>3. True = <b>${fmt(T)}° T</b>`;
+ ok.textContent='✓ CALCULATION COMPLETE';
+}
+function resetAll(){['c','d','v'].forEach(x=>document.getElementById(x).value='');ce.textContent='0.0° E';mb.textContent='000.0° M';tb.textContent='000.0° T';steps.textContent='Enter the compass bearing, deviation and variation.';ok.textContent='✓ READY FOR CALCULATION'}
+function parseCoord(s){s=String(s||'').trim().toUpperCase().replace(/°/g,' ').replace(/'/g,' ');let h=(s.match(/[NSEW]/)||[])[0]||'',n=s.match(/[-+]?\\d+(?:\\.\\d+)?/g);if(!n)return NaN;let val=Math.abs(+n[0])+(n[1]?+n[1]/60:0);if(+n[0]<0)val=-val;if(h==='S'||h==='W')val=-Math.abs(val);return val}
+function distance(){
+ let a=parseCoord(lat1.value),b=parseCoord(lon1.value),c2=parseCoord(lat2.value),d2=parseCoord(lon2.value);if([a,b,c2,d2].some(x=>!isFinite(x))){psteps.textContent='Please enter valid coordinates.';return}
+ let r=3440.065,p1=a*Math.PI/180,p2=c2*Math.PI/180,dp=(c2-a)*Math.PI/180,dl=(d2-b)*Math.PI/180;
+ let q=Math.sin(dp/2)**2+Math.cos(p1)*Math.cos(p2)*Math.sin(dl/2)**2,ds=r*2*Math.atan2(Math.sqrt(q),Math.sqrt(1-q));
+ let y=Math.sin(dl)*Math.cos(p2),x=Math.cos(p1)*Math.sin(p2)-Math.sin(p1)*Math.cos(p2)*Math.cos(dl),start=norm(Math.atan2(y,x)*180/Math.PI);
+ dist.textContent=ds.toFixed(2)+' NM';ib.textContent=fmt(start)+'° T';fb.textContent=fmt(norm(start+180))+'° T';psteps.innerHTML='Great-circle distance: <b>'+ds.toFixed(2)+' NM</b><br>Initial bearing: <b>'+fmt(start)+'° T</b>';
+}
+function posExample(){lat1.value="01°13.449' N";lon1.value="103°04.299' E";lat2.value="01°20.000' N";lon2.value="103°10.000' E";distance()}
+const baseObjects=[['Raffles Lighthouse','Singapore Strait',104.8],['Sultan Shoal Lighthouse','Singapore Strait',176.2],['Horsburgh Lighthouse','Singapore Strait',120.5],['Pedra Branca','Singapore Strait',116.9],['Pulau Bintan','Indonesia',259.3],['Pulau Batam','Indonesia',240.1],['Tuas View','Singapore',274.6],['Pulau Ubin','Singapore',48.0]];
+let customObjects=JSON.parse(localStorage.getItem('csmWyvernObjects')||'[]');
+function objects(){
+ let q=(search.value||'').toLowerCase();
+ let all=baseObjects.concat(customObjects);
+ olist.innerHTML=all.filter(o=>(o[0]+' '+o[1]).toLowerCase().includes(q)).map((o,i)=>{
+   let isCustom=i>=baseObjects.length;
+   return `<button class="object" onclick="ot.value=${Number(o[2])}"><span class="oicon">⚓</span><span class="oname"><b>${o[0]}</b><small>${o[1]}${isCustom?' • Custom':''}</small></span><strong>${Number(o[2]).toFixed(1)}° T ›</strong></button>`;
+ }).join('');
+}
+function addCustomObject(){
+ let name=prompt('Object name:');
+ if(!name || !name.trim()) return;
+ let location=prompt('Location / area:','Singapore');
+ if(location===null) return;
+ let bearing=prompt('True bearing (°T):','000.0');
+ if(bearing===null || !isFinite(Number(bearing))) { alert('Invalid bearing.'); return; }
+ bearing=((Number(bearing)%360)+360)%360;
+ customObjects.push([name.trim(),location.trim()||'Custom',bearing]);
+ localStorage.setItem('csmWyvernObjects',JSON.stringify(customObjects));
+ objects();
+ alert('Custom object added.');
+}
+function objError(){let e=norm(Number(ot.value)-Number(oc.value));if(e>180)e-=360;or.innerHTML=`Compass Error = <b>${Math.abs(e).toFixed(1)}° ${e>=0?'E':'W'}</b>`}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));t.classList.add('active');document.getElementById(t.dataset.p).classList.add('active')});
+objects();
+</script>
+</body></html>
