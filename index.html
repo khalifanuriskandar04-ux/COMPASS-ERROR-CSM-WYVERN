@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#061d31">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Compass Error CSM WYVERN">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png?v=2">
+<title>Compass Error — CSM WYVERN</title>
+<style>
+:root{--navy:#031b2d;--navy2:#062d49;--blue:#087fe5;--cyan:#27b7ff;--gold:#ffc52e;--green:#35d47b;--muted:#9fb4c4;--line:#24475f}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{height:100%;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#020d17;color:#fff;overscroll-behavior:none}
+.app{min-height:100vh;min-height:100dvh;background:radial-gradient(circle at 50% -10%,#135b86 0,#062c47 25%,#020d17 62%)}
+.hero{position:relative;min-height:255px;overflow:hidden;background:linear-gradient(180deg,#0b5781 0,#082e49 57%,#03111d 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#00172b10 30%,#00101de8 100%)}
+.hero-art{position:absolute;inset:0;opacity:.58;background:
+radial-gradient(ellipse at 50% 18%,#8bd8ff40 0 12%,transparent 34%),
+linear-gradient(165deg,transparent 54%,#071c2d 55% 71%,#0a4c6d 72% 77%,#0c2e46 78%)}
+.hero-inner{position:relative;z-index:2;max-width:900px;margin:auto;padding:18px 16px 14px;text-align:center}
+.topbar{display:flex;justify-content:space-between;align-items:center}
+.circlebtn{width:39px;height:39px;border:1px solid #ffffff40;border-radius:10px;background:#031d32bb;color:white;font-size:21px}
+.logo{width:74px;height:74px;border-radius:50%;object-fit:cover;border:2px solid #ffffffaa;box-shadow:0 4px 18px #0008;background:white}
+h1{font-size:29px;line-height:1.05;margin:10px 0 2px;font-weight:900;letter-spacing:.5px;text-shadow:0 3px 12px #000}
+h2{font-size:21px;margin:0;font-weight:800}
+.tag{font-size:9px;letter-spacing:1.4px;font-weight:800;color:#d9effa;margin-top:8px}
+.tabs{position:absolute;z-index:5;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:auto;background:#03111de8;border:1px solid #294a61;border-bottom:0;border-radius:14px 14px 0 0;overflow:hidden}
+.tab{border:0;background:transparent;color:#a8bbc7;padding:10px 4px 9px;font-weight:700;font-size:11px}
+.tab b{display:block;font-size:18px;margin-bottom:2px}.tab.active{background:#087fe5;color:white}
+.main{max-width:900px;margin:auto;padding:12px 12px 28px}
+.panel{display:none}.panel.active{display:block}
+.card{background:linear-gradient(145deg,#071d2e,#031421);border:1px solid var(--line);border-radius:14px;padding:13px;margin-bottom:11px;box-shadow:0 8px 25px #0006}
+.card-title{font-size:14px;font-weight:900;letter-spacing:.4px;margin-bottom:11px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.field{background:#061a2a;border:1px solid #23465d;border-radius:10px;padding:10px}
+label{display:block;color:#a8bbc7;font-size:9px;font-weight:800;letter-spacing:.8px;margin-bottom:7px}
+input,select{width:100%;height:44px;border-radius:8px;border:1px solid #38586c;background:#f1f5f7;color:#102b3d;font-size:18px;font-weight:800;padding:7px 9px}
+input:focus,select:focus{outline:2px solid #087fe566}
+.row{display:grid;grid-template-columns:1fr 78px;gap:6px}
+.buttons{display:flex;gap:7px;margin-top:10px}.btn{flex:1;border:0;border-radius:9px;padding:12px 8px;color:#fff;font-weight:900;background:#087fe5}.btn.alt{background:#24455b}.btn.green{background:#128a52}.btn.red{background:#a92e37}
+.result{margin-top:10px;display:grid;gap:7px}
+.rline{display:flex;justify-content:space-between;align-items:center;background:#071e30;border:1px solid #31556b;border-radius:10px;padding:11px 12px}.rline span{font-size:11px;color:#c1d0d8}.rline strong{font-size:24px}.gold{color:var(--gold)}.greenText{color:var(--green)}.cyan{color:var(--cyan)}
+.steps{background:#061725;border:1px solid #24495f;border-radius:10px;padding:11px;margin-top:8px;font-size:11px;line-height:1.7;color:#c7d7df}
+.status{margin-top:8px;background:#07572f;border:1px solid #2dd47755;border-radius:10px;padding:11px;text-align:center;color:#e9fff3;font-weight:800;font-size:12px}
+.object-list{display:grid;gap:7px}.obj{display:flex;align-items:center;gap:9px;padding:10px;border:1px solid #24465b;background:#061a2a;border-radius:10px;text-align:left;color:#fff;width:100%}.obj .ico{width:42px;height:42px;border-radius:8px;background:linear-gradient(145deg,#2b789c,#0b324d);display:grid;place-items:center;font-size:21px}.obj .name{flex:1}.obj .name b{display:block;font-size:12px}.obj .name small{color:#8fa8b7;font-size:9px}.obj .bearing{color:#51c8ff;font-weight:900;font-size:12px}
+.search{margin-bottom:9px}
+.search input{height:42px}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#061725;border-left:3px solid #17a8ed;padding:11px;border-radius:7px;font-size:11px;line-height:1.8;color:#d4e4eb}
+.note{font-size:10px;line-height:1.6;color:#9eb2bf}
+.setting{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #17364a;font-size:12px}.setting:last-child{border:0}
+.footer{text-align:center;color:#7893a2;font-size:9px;letter-spacing:.7px;padding:4px 0 16px}
+.modal{position:fixed;inset:0;background:#0009;z-index:20;display:none;align-items:flex-end}.modal.show{display:flex}.sheet{width:100%;max-width:600px;margin:auto;background:#061827;border:1px solid #31556b;border-bottom:0;border-radius:17px 17px 0 0;padding:13px;max-height:78vh;overflow:auto}.sheet h3{margin:3px 0 10px}.close{float:right;background:#213f52;color:white;border:0;border-radius:8px;padding:7px 11px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.hero{min-height:240px}h1{font-size:25px}.logo{width:66px;height:66px}.tab{font-size:10px}}
+@media(min-width:700px){.hero{min-height:310px}.hero-inner{padding-top:25px}.tabs{border-radius:14px}.main{padding-top:18px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+<div class="hero-art"></div>
+<div class="hero-inner">
+<div class="topbar"><button class="circlebtn" onclick="showInfo()">☰</button><img class="logo" src="icon-192.png?v=2" onerror="this.style.display='none'"><button class="circlebtn" onclick="showInfo()">⚙</button></div>
+<h1>COMPASS ERROR</h1><h2>CSM WYVERN</h2><div class="tag">SAFE NAVIGATION • ACCURATE COURSE • EVERY MILE COUNTS</div>
+</div>
+<nav class="tabs">
+<button class="tab active" data-tab="calc"><b>▣</b>Calculator</button>
+<button class="tab" data-tab="objects"><b>⌖</b>Objects</button>
+<button class="tab" data-tab="theory"><b>◫</b>Theory</button>
+<button class="tab" data-tab="settings"><b>⚙</b>Settings</button>
+</nav>
+</header>
+
+<main class="main">
+<section id="calc" class="panel active">
+<div class="card">
+<div class="card-title">⚓ INPUT DATA</div>
+<div class="grid">
+<div class="field"><label>COMPASS BEARING (C)</label><input id="C" type="number" inputmode="decimal" min="0" max="360" step=".1" placeholder="090.0"></div>
+<div class="field"><label>DEVIATION</label><div class="row"><input id="D" type="number" inputmode="decimal" min="0" max="180" step=".1" placeholder="2.0"><select id="DE"><option>E</option><option>W</option></select></div></div>
+<div class="field"><label>VARIATION</label><div class="row"><input id="V" type="number" inputmode="decimal" min="0" max="180" step=".1" placeholder="1.0"><select id="VE"><option>E</option><option>W</option></select></div></div>
+<div class="field"><label>OBJECT / REMARK</label><input id="remark" type="text" placeholder="e.g. Raffles Lighthouse"></div>
+</div>
+<div class="buttons"><button class="btn" onclick="calculate()">🧮 CALCULATE</button><button class="btn alt" onclick="example()">↻ EXAMPLE</button><button class="btn red" onclick="resetCalc()">RESET</button></div>
+</div>
+<div class="card">
+<div class="card-title">◉ RESULT</div>
+<div class="result">
+<div class="rline"><span>Compass Error<br>(Variation + Deviation)</span><strong id="CE" class="gold">0.0° E</strong></div>
+<div class="rline"><span>Magnetic Bearing (M)<br>(C + Deviation)</span><strong id="M" class="greenText">000.0° M</strong></div>
+<div class="rline"><span>True Bearing (T)<br>(M + Variation)</span><strong id="T" class="cyan">000.0° T</strong></div>
+</div>
+<div id="steps" class="steps">Enter C, deviation and variation, then press Calculate.</div>
+<div id="status" class="status">✓ READY FOR CALCULATION</div>
+</div>
+</section>
+
+<section id="objects" class="panel">
+<div class="card">
+<div class="card-title">📍 COMMON OBJECTS — TRUE BEARING REFERENCE</div>
+<div class="search"><input id="search" type="search" placeholder="Search object..." oninput="renderObjects()"></div>
+<div class="object-list" id="objectList"></div>
+<button class="btn" style="margin-top:9px" onclick="openCustom()">＋ ADD CUSTOM OBJECT</button>
+</div>
+<div class="card">
+<div class="card-title">OBJECT OBSERVATION</div>
+<div class="grid">
+<div class="field"><label>SELECTED OBJECT TRUE BEARING</label><input id="objTrue" type="number" inputmode="decimal" placeholder="e.g. 104.8"></div>
+<div class="field"><label>OBSERVED COMPASS BEARING</label><input id="objComp" type="number" inputmode="decimal" placeholder="e.g. 103.8"></div>
+</div>
+<div class="buttons"><button class="btn green" onclick="objectError()">CALCULATE OBJECT ERROR</button></div>
+<div id="objResult" class="steps">Compass Error = True Bearing − Compass Bearing.</div>
+</div>
+</section>
+
+<section id="theory" class="panel">
+<div class="card"><div class="card-title">🧭 COMPASS ERROR THEORY</div>
+<div class="formula">Compass Error = Deviation + Variation<br>Magnetic (M) = Compass (C) + Deviation<br>True (T) = Magnetic (M) + Variation<br>True (T) = Compass (C) + Compass Error</div>
+<p class="note"><b>Sign convention:</b> East is positive (+), West is negative (−). Bearings are normalized to 000°–360°.</p>
+<p class="note"><b>Object observation:</b> if a fixed object's true bearing is known, Compass Error = True Bearing − Observed Compass Bearing. The sign of the result indicates E/W.</p>
+</div>
+<div class="card"><div class="card-title">⚠ NAVIGATION NOTE</div><p class="note">Use the vessel's approved deviation card and the correct charted magnetic variation for the position/date. This calculator is a navigation aid and does not replace approved compass checks, nautical charts, ECDIS procedures, or the vessel's SMS.</p></div>
+</section>
+
+<section id="settings" class="panel">
+<div class="card"><div class="card-title">⚙ SETTINGS</div>
+<div class="setting"><span>Application</span><b>Compass Error CSM WYVERN</b></div>
+<div class="setting"><span>Display</span><b>Mobile / PWA</b></div>
+<div class="setting"><span>Angle range</span><b>000°–360°</b></div>
+<div class="setting"><span>Sign convention</span><b>E + / W −</b></div>
+</div>
+</section>
+<div class="footer">CSM WYVERN • COMPASS ERROR CALCULATOR • NAVIGATION AID</div>
+</main>
+</div>
+
+<div class="modal" id="modal"><div class="sheet"><button class="close" onclick="closeModal()">Close</button><h3>COMPASS ERROR CSM WYVERN</h3><p class="note">Professional compass-error calculator with object reference and PWA support.</p><p class="note">Tip: use Add to Home Screen after publishing on GitHub Pages.</p></div></div>
+
+<script>
+const objects=[
+{name:"Raffles Lighthouse",area:"Singapore Strait",bearing:104.8},
+{name:"Sultan Shoal Lighthouse",area:"Singapore Strait",bearing:176.2},
+{name:"Horsburgh Lighthouse",area:"Singapore Strait",bearing:120.5},
+{name:"Pedra Branca",area:"Singapore Strait",bearing:116.9},
+{name:"Pulau Bintan",area:"Indonesia",bearing:259.3},
+{name:"Pulau Batam",area:"Indonesia",bearing:240.1},
+{name:"Tuas View",area:"Singapore",bearing:274.6},
+{name:"Pulau Ubin",area:"Singapore",bearing:48.0}
+];
+let customObjects=JSON.parse(localStorage.getItem("csmCompassObjects")||"[]");
+const norm=x=>((Number(x)%360)+360)%360;
+const fmt=x=>norm(x).toFixed(1).padStart(5,"0");
+const signed=(value,ew)=>Number(value||0)*(ew==="E"?1:-1);
+function errorText(x){return Math.abs(x).toFixed(1)+"° "+(x>=0?"E":"W")}
+function calculate(){
+ let c=Number(document.getElementById("C").value||0), d=signed(document.getElementById("D").value,document.getElementById("DE").value), v=signed(document.getElementById("V").value,document.getElementById("VE").value);
+ let ce=d+v,m=norm(c+d),t=norm(c+ce);
+ document.getElementById("CE").textContent=errorText(ce);
+ document.getElementById("M").textContent=fmt(m)+"° M";
+ document.getElementById("T").textContent=fmt(t)+"° T";
+ document.getElementById("steps").innerHTML=`1. Compass Error = ${errorText(d)} + ${errorText(v)} = <b>${errorText(ce)}</b><br>2. Magnetic Bearing = ${fmt(c)}° + ${errorText(d)} = <b>${fmt(m)}° M</b><br>3. True Bearing = ${fmt(m)}° + ${errorText(v)} = <b>${fmt(t)}° T</b>`;
+ document.getElementById("status").textContent="✓ CALCULATION COMPLETE • BEARINGS NORMALIZED 000°–360°";
+}
+function example(){C.value="090";D.value="2";DE.value="E";V.value="1";VE.value="W";remark.value="Raffles Lighthouse";calculate()}
+function resetCalc(){["C","D","V","remark"].forEach(id=>document.getElementById(id).value="");document.getElementById("CE").textContent="0.0° E";document.getElementById("M").textContent="000.0° M";document.getElementById("T").textContent="000.0° T";document.getElementById("steps").textContent="Enter C, deviation and variation, then press Calculate.";document.getElementById("status").textContent="✓ READY FOR CALCULATION"}
+function renderObjects(){
+ let q=(document.getElementById("search").value||"").toLowerCase();
+ let all=[...objects,...customObjects].filter(o=>(o.name+" "+o.area).toLowerCase().includes(q));
+ document.getElementById("objectList").innerHTML=all.map((o,i)=>`<button class="obj" onclick="selectObject(${o.bearing},'${o.name.replace(/'/g,"\\'")}')"><span class="ico">⚓</span><span class="name"><b>${o.name}</b><small>${o.area}</small></span><span class="bearing">${fmt(o.bearing)}° T ›</span></button>`).join("");
+}
+function selectObject(b,n){document.getElementById("objTrue").value=Number(b).toFixed(1);document.getElementById("remark").value=n;document.querySelector('[data-tab="objects"]').click()}
+function objectError(){
+ let t=Number(document.getElementById("objTrue").value),c=Number(document.getElementById("objComp").value);
+ if(!isFinite(t)||!isFinite(c)){document.getElementById("objResult").textContent="Enter both True Bearing and Observed Compass Bearing.";return}
+ let e=norm(t-c); if(e>180)e-=360;
+ document.getElementById("objResult").innerHTML=`<b>Compass Error = True − Compass</b><br>${fmt(t)}° T − ${fmt(c)}° C = <b>${errorText(e)}</b><br><br>${e>=0?"EAST ERROR":"WEST ERROR"}`;
+}
+function openCustom(){
+ let name=prompt("Object name:"); if(!name)return;
+ let bearing=Number(prompt("True bearing (°T):")); if(!isFinite(bearing))return;
+ let area=prompt("Area / location:")||"Custom";
+ customObjects.push({name,area,bearing:norm(bearing)});localStorage.setItem("csmCompassObjects",JSON.stringify(customObjects));renderObjects();
+}
+function showInfo(){document.getElementById("modal").classList.add("show")}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.getElementById(b.dataset.tab).classList.add("active")});
+renderObjects();
+if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}));
+</script>
+</body></html>
